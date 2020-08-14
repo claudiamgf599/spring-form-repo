@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h3 th:text="${titulo}"></h3>
+	<form th:action="@{/form}" method="post">
+		<div>
+			<label for="username">Username</label>
+			<div>
+				<input type="text" name="username" id="username" th:value="${user.username}">
+			</div>
+			<!-- También se puede usar el map.key para obtener el valor aquí en thymeleaf  -->
+			<div th:if="${error != null && error.containsKey('username')}" th:text="${error.get('username')}"></div>
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<div>
+				<input type="password" name="password" id="password">
+			</div>
+			<div th:if="${error != null && error.containsKey('password')}" th:text="${error.password}"></div>
+		</div>
+		<div>
+			<label for="email">Email</label>
+			<div>
+				<!-- Puedo tener el input tipo email, para que en el cliente se valide automáticamente el formato de correo -->
+				<input type="text" name="email" id="email" th:value="${user.email}">
+			</div>
+			<div th:if="${error != null && error.containsKey('email')}" th:text="${error.email}" ></div>
+		</div>
+		<div>
+			<div>
+				<input type="submit" value="Enviar">
+			</div>
+		</div>
+	</form>
+</body>
+</html>
