@@ -2,6 +2,7 @@ package com.bolsadeideas.springboot.form.app.models.domain;
 
 import javax.validation.constraints.NotEmpty;
 
+/**Clase para mapear el formulario de registro de usuario */
 public class Usuario {
 	
 	
