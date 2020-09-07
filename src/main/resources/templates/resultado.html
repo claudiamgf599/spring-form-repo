@@ -7,6 +7,7 @@
 	th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
+	<section th:replace="componentes/tiempoTranscurrido :: interceptor"></section>
 	<h3 th:text="${titulo}"></h3>
 	<ul>
 	    <li th:text="'Habilitado: ' + ${usuario.habilitar}"></li>

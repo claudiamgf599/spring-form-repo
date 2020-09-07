@@ -191,7 +191,7 @@ public class FormController {
 			return "redirect:/form";
 		}
 		
-		model.addAttribute("titulo", "Resultado del formulario");
+		model.addAttribute("titulo", "Resultado del formulario (ver)");
 		model.addAttribute("usuario", usuario);
 		status.setComplete(); //Elimina el objeto de la sesión, porque ya ha finalizado
 		
